@@ -31,6 +31,19 @@ export default function TextForm(props) {
       : props.showAlert("Please enter text to continue", "warning");
   };
 
+  const handleAsciitext = () => {
+    let asciiArr = [];
+    for (const key in text) {
+      const code = text.charCodeAt(key);
+      asciiArr.push(code + " ");
+      const finalAsciiArr = asciiArr.join("");
+      setText(finalAsciiArr);
+    }
+    text !== ""
+      ? props.showAlert("converted to ascii code", "success")
+      : props.showAlert("Please enter text to continue", "warning");
+  };
+
   return (
     <>
       <div
@@ -59,6 +72,9 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-1" onClick={handleCleartext}>
           Clear Text
+        </button>
+        <button className="btn btn-primary mx-1" onClick={handleAsciitext}>
+          Convert to ascii code
         </button>
       </div>
       <div
