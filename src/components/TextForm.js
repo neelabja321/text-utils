@@ -73,7 +73,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-1" onClick={handleCleartext}>
           Clear Text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleAsciitext}>
+        <button className="btn btn-primary mx-1 my-2" onClick={handleAsciitext}>
           Convert to ascii code
         </button>
       </div>
